@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Word?</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section id="connectionInfo" class="connectionInfo">
+        <button id="connectButton" class="button connectionInfoButton">Connect</button>
+        <pre id="log" class="pre"></pre>
+    </section>
+    <section id="contentWrapper" class="contentWrapper">
+
+    <h1 class="headline">Welcome! Guess new word ...</h1>
+    <h2 class="headline">Challenge your friend and guess word!</h2>
+
+    <section id="connection-info">
+        <form id="authFrom" class="authForm">
+            <div class="inputWrapper">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="input passwordInput" placeholder="Enter your password here">
+                <div id="passwordError" class="error">
+                    <p>Can't be empty</p>
+                    <p>At least: lowercase and uppercase letter, number, _, ! and length more or equal to 8</p>
+                </div>
+            </div>
+            <div class="inputWrapper">
+                <label for="nickName">Nick name</label>
+                <input type="text" id="nickName" class="input nameInput" placeholder="Enter your name here">
+                <div id="nickNameError" class="error">
+                    <p>Can't be empty. Only letters and underscore.</p>
+                </div>
+            </div>
+            <button id="sendPasswordButton" class="button">Send Password</button>
+        </form>
+    </section>
+
+    <!-- <section id="competitors" class="competitors" style="display: block;"> -->
+    <section id="competitors" class="competitors">
+        <div id="initiatorSection" class="initiatorSection">
+            <div id="initiatorInteractionBlock">
+                <input type="text" id="guessWordInput" placeholder="Enter word" class="input competitorsInput wordInput">
+                <button type="button" id="secreteWordButton" class="button button-azure">Add Word</button>
+            </div>
+            <div id="guessWordError" class="error">
+                <p>Can't be empty.</p>
+                <p>Only lowercase letters.</p>
+            </div>
+        </div>
+        <div id="competitors_container" class="competitorsContainer">
+            <button type="button" id="showCompetitors" class="button button-azure">Show competitors</button>
+            <!-- <table id="competitorsTable" class="table" style="display: block;"> -->
+            <table id="competitorsTable" class="table">
+                <thead class="tableHead">
+                    <tr class="tableRow">
+                        <th class="tableHeadCell tableHeadCellId">ID</th>
+                        <th class="tableHeadCell tableHeadCellNickName">Nick Name</th>
+                        <th class="tableHeadCell tableHeadCell">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="competitorsTableBody">
+                    <!-- Rows will be added dynamic -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- TODO: add condition to this section. This section available only in case, when both players accepted request -->
+    <section id="matchField" class="matchField">
+        <div id="shortOpponentInfo" class="shortOpponentInfo">
+            <span>Opponent:</span>
+            <span id="opponentId"></span>
+        </div>
+        <div>
+            <!-- NOTE: should be shown for players who select the word gor guess -->
+            <div id="hintContainer" class="hintContainer">
+                <input type="text" id="hintInput" class="input matchInput hintInput" placeholder="Enter hint">
+                <button type="button" id="hintButton" class="button button-azure">Add Hint</button>
+                <div id="hintError" class="error">
+                    <p>Can't be empty.</p>
+                </div>
+            </div>
+
+            <!-- NOTE: should be shown for plyers who guessing the word -->
+            <div id="answerContainer" class="answerContainer">
+                <div>
+                    <input type="text" id="answerInput" class="input matchInput wordInput" placeholder="Enter your answer">
+                    <button type="button" id="answerButton" class="button button-azure">Answer</button>
+                    <div id="answerError" class="error">
+                        <p>Can't be empty. Only lowercase letters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOTE: this button should be available only for people who accept the challenge -->
+            <!-- TODO: add condition -->
+            <div id="competitorGiveUp" class="competitorGiveUp">
+                <label for="giveUpButton">Finish match and see result</label>
+                <button id="giveUpButton" class="button button-azure">Finish</button>
+            </div>
+
+            <table class="attemptsTable">
+                <thead>
+                    <tr>
+                        <th class="tableHeadAttempt">Attempt</th>
+                        <th class="tableHeadStatus">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attemptsTableBody">
+                    <!-- Rows will be added dynamic -->
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- NOTE: this hint block should be visible only for player who try to guess the word -->
+        <div id="hintBlock" class="hintBlock">
+            <label for="hintText" class="hintTextLabel">Hint:</label>
+            <span id="hintText">
+                <!-- content should be dynamic -->
+            </span>
+        </div>
+    </section>
+
+</section>
+
+<div id="modalWindow" class="modal">
+    <div id="modalContent" class="modalContent">
+        <span id="close" class="close">&times;</span>
+        <div id="modalDescription" class="modalDescription">
+            <!-- Dynamic content -->
+        </div>
+        <div class="modalButtonContainer">
+            <button id="modalCancelButton" class="button modalCancelButton">Cancel</button>
+            <button id="modalAcceptButton" class="button modalAcceptButton">Accept</button>
+        </div>
+    </div>
+</div>
+
+
+    <script type="module" src="./dist/app.js"></script>
+
+</body>
+</html>

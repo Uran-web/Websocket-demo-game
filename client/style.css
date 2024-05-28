@@ -1,0 +1,416 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+body {
+    height: 100dvh;
+    width: 100dvw;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url('/client/public/images/goldQuestion.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+h1 {
+    margin: 12px 0;
+}
+
+h2 {
+    margin: 8px 0;
+}
+
+.connectionInfo {
+    position: absolute;
+}
+
+.connectionInfoButton {
+    margin-bottom: 20px;
+    width: 200px;
+    align-self: center;
+}
+
+.pre {
+    width: 500px;
+    height: 50px;
+    overflow: auto;
+}
+
+.headline {
+    color: #8A5B3E;
+    text-align: center;
+}
+
+.contentWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    width: 100%;
+}
+
+.button {
+    padding: 10px 5px;
+    width: 150px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: white;
+
+    &:hover {
+        cursor: pointer;
+        border-color: #bababa;
+    }
+}
+
+.input {
+    padding: 10px 8px;
+    width: 200px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &:hover {
+        border-color: #bababa;
+    }
+
+    &:focus {
+        border-color: #bababa;
+        outline-color: #bababa;
+    }
+}
+
+.button-competitors {
+    background-color: #E9E9E9;
+}
+
+/* Login and connection block */
+.connection-info {
+    margin-bottom: 20px;
+}
+/* End login and connection */
+
+/* Competitors block */
+.competitors {
+    display: none;
+}
+
+.initiatorSection {
+    margin-bottom: 20px;
+}
+
+.initiatorInteractionBlock {
+    display: flex;
+    align-items: center;
+}
+
+.competitorsInput {
+    margin-right: 10px;
+}
+
+.authForm {
+    position: relative;
+    padding: 20px 16px;
+    /* max-width: 500px; */
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #E9E9E9;
+        opacity: 0.8;
+        z-index: -1;
+    }
+}
+
+.inputWrapper {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.competitorsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.competitors {
+    display: none;
+    position: relative;
+    padding: 22px 16px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #E9E9E9;
+        opacity: 0.8;
+        z-index: -1;
+    }
+}
+
+.table {
+    display: none;
+    width: 100%;
+}
+
+.tableHead {
+    width: 100%;
+}
+
+.tableRow {
+    width: 100%;
+}
+
+.tableHeadCell {
+    /* width: 100%; */
+    padding: 5px 8px;
+}
+
+.tableHeadCellId {
+    width: 15%;
+}
+.tableHeadCellNickName {
+    width: 30%;
+}
+.tableHeadCell {
+    width: 30%;
+}
+
+.idCell {
+    width: 15%;
+    text-align: center;
+    padding: 5px 8px;
+}
+.nickNameCell {
+    width: 25%;
+    text-align: center;
+    padding: 5px 8px;
+}
+.statusCell {
+    width: 25%;
+    text-align: center;
+    padding: 5px 8px;
+}
+.actionsCell {
+    width: 35%;
+    text-align: center;
+    padding: 5px 8px;
+}
+/* End of competitors block */
+
+
+/* Modal block */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  /* Modal Content */
+.modalContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%;
+    border-radius: 5px;
+}
+
+.modalDescription {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shortDescription {
+    text-align: center;
+}
+
+.confirmation {
+    text-align: center;
+}
+
+  /* The Close Button */
+.close {
+    width: auto;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.modalCancelButton, .modalAcceptButton {
+    padding: 12px 8px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: 0.3s;
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+  
+    &:hover {
+        cursor: pointer;
+        background-color: #f0ffff;
+        border-color: transparent;
+    }
+}
+
+  /* End modal block */
+
+  /* Game in progress */
+  .matchField {
+        display: none;
+        position: relative;
+        padding: 22px 16px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color: transparent;
+        overflow: hidden;
+    
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: #E9E9E9;
+            opacity: 0.8;
+            z-index: -1;
+        }
+  }
+
+  .shortOpponentInfo {
+    margin-bottom: 10px;
+  }
+
+  .matchInput {
+    margin-right: 10px;
+  }
+
+  .answerContainer {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.hintContainer {
+    display: none;
+}
+
+.competitorGiveUp {
+    display: none;
+    margin-bottom: 20px;
+  }
+
+  .hintBlock {
+    display: none;
+    position: absolute;
+    width: 350px;
+    right: 0;
+    top: 25%;
+    transform: translateY(-25%);
+  }
+
+  .hintTextLabel {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .tableHeadAttempt {
+    width: 50%;
+  }
+  .tableHeadStatus {
+    width: 50%;
+  }
+  .attemptCell {
+    width: 50%;
+    text-align: center;
+  }
+  .statusCell {
+    width: 50%;
+    text-align: center;
+  }
+  /* Game in progress */
+
+  /* Error block */
+.error {
+    color: red;
+    font-size: .7rem;
+    display: none;
+}
+
+.empty {
+    color: red;
+    display: block;
+}
+
+.invalid {
+    color: red;
+    display: block;
+}
