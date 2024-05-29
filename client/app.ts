@@ -138,7 +138,14 @@ function log(message: string) {
   }
 }
 
-// NOTE: should add valid PORT to .env
+const isUnixSocket =
+  navigator.userAgent.indexOf("Linux") !== -1 ||
+  navigator.userAgent.indexOf("X11") !== -1;
+
+const wsURL = isUnixSocket
+  ? "wss://tmp/guess_word_server.sock"
+  : "ws://localhost:3000";
+
 const ws = new WebSocket(`ws://localhost:3000`);
 
 ws.onopen = () => {
